@@ -12,17 +12,18 @@ import AppHeader from '../components/AppHeader.vue'
 
 <template>
     <div >
-        <div class="container flex border-2 border-black pb-40   m-auto rounded-lg mt-32">
+        <div class="container flex border-2 border-black pb-40  shadow-xl  m-auto rounded-lg mt-32">
 
         <AppHeader title="Add Task"/>
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         </div>
-    
-        
+
+
     </div>
 </template>
