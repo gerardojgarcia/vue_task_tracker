@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="divide-y divide-gray-100 py-6 space-y-4" v-for="task in tasks" :key="task.id">
+  <div class="  ease-out duration-500 divide-y divide-gray-100 py-6 space-y-4" v-for="task in tasks" :key="task.id">
 
 <AppTask :task="task" />
   </div>
