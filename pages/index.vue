@@ -59,19 +59,14 @@ function toggleReminder(id){
 
 <template>
     <div >
-        <div class="container flex flex-col border-2 border-black pb-16 max-w-2xl rounded-lg mt-16 m-auto">
+        <div class="container flex flex-col border-2 border-black pb-8 max-w-2xl rounded-lg my-16 m-auto">
 
         <AppHeader title="Task Tracker"/>
           <AppAddTask/>
 
-
-
           <div class="p-8">
             <AppTasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder"/>
           </div>
-
-
-
 
         </div>
 
