@@ -5,7 +5,7 @@ defineProps({
   tasks: Array,
 })
 
-defineEmits(['delete-task'])
+defineEmits(['delete-task', 'toggle-reminder'])
 
 
 
@@ -14,7 +14,7 @@ defineEmits(['delete-task'])
 <template>
   <div class="  ease-out duration-500 divide-y divide-gray-100 py-6 space-y-4" v-for="task in tasks" :key="task.id">
 
-<AppTask :task="task" @delete-task="$emit('delete-task', task.id)" />
+<AppTask :task="task" @delete-task="$emit('delete-task', task.id)" @toggle-reminder="$emit('toggle-reminder', task.id)" />
   </div>
 </template>
 

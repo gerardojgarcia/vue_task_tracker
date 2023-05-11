@@ -1,5 +1,5 @@
 <script setup>
-import { emit } from 'process';
+
 
 
 defineProps({
@@ -12,16 +12,16 @@ defineProps({
 </script>
 
 <template>
-  <div :class="[task.reminder ?  'reminder' : '', 'task']">
+  <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ?  'reminder' : '', 'task']">
     <h3 class="text-2xl space-between flex align-center ">{{task.text}}
-    <span class="text-red-500 ml-auto border-2 border-black rounded-md p-2 " @click="$emit('delete-task', id)">Delete</span>
+    <span class="text-red-500 ml-auto border-2 border-black rounded-md p-2 " @click="$emit('delete-task', task.id)">Delete</span>
 
     </h3>
-    <strong> {{task.day}} </strong>
+    <strong class="text-lg "> {{task.day}} </strong>
 
   </div>
 </template>
- 
+
 <style scoped>
 
 .task {
