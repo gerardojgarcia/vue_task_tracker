@@ -13,11 +13,11 @@ defineProps({
 
 <template>
   <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ?  'reminder' : '', 'task']">
-    <h3 class="text-2xl space-between flex align-center ">{{task.text}}
+    <h3 class="text-2xl space-between flex align-center ml-2">{{task.text}}
     <span class="text-red-500 ml-auto border-2 border-black rounded-md p-2 " @click="$emit('delete-task', task.id)">Delete</span>
 
     </h3>
-    <strong class="text-lg "> {{task.day}} </strong>
+    <strong class="text-lg ml-2 "> {{task.day}} </strong>
 
   </div>
 </template>
@@ -31,7 +31,8 @@ defineProps({
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid #FDFD96;
+  
 }
 
 h3 > span {

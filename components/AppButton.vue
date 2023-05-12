@@ -5,8 +5,10 @@ defineProps({
   color: String
 })
 
+const emit = defineEmits(['toggle-add-task'])
+
 function onClick(){
-  console.log('click')
+  emit('toggle-add-task')
 }
 
 

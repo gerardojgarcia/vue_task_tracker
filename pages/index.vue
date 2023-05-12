@@ -32,6 +32,10 @@ const tasks = ref([
 ]
 )
 
+const showAddTask = ref(false)
+
+
+
 function deleteTask(id){
 
   if(confirm('Are you sure?')){
@@ -53,6 +57,14 @@ function toggleReminder(id){
 }
 
 
+function addTask(task){
+  tasks.value = [...tasks.value, task]
+}
+
+function toggleAddTask(){
+  showAddTask.value = !showAddTask.value
+}
+
 
 </script>
 
@@ -61,8 +73,12 @@ function toggleReminder(id){
     <div >
         <div class="container flex flex-col border-2 border-black pb-8 max-w-2xl rounded-lg my-16 m-auto">
 
-        <AppHeader title="Task Tracker"/>
-          <AppAddTask/>
+        <AppHeader title="Task Tracker" @toggle-add-task="toggleAddTask"/>
+
+
+          <div v-if="showAddTask">
+            <AppAddTask @add-task="addTask"/>
+          </div>
 
           <div class="p-8">
             <AppTasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder"/>

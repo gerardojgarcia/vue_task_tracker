@@ -1,5 +1,33 @@
 <script setup>
 
+const text = ref('')
+const day = ref('')
+const reminder =ref(false)
+
+const emit = defineEmits(['add-task'])
+
+function onSubmit(e){
+e.preventDefault()
+
+if(!text.value){
+  alert("please add a task")
+  return
+}
+
+const newTask = {
+  id: Math.floor(Math.random() * 1000),
+  text: text.value,
+  day: day.value,
+  reminder: reminder.value
+
+}
+
+emit('add-task', newTask)
+
+}
+
+
+
 
 
 </script>
