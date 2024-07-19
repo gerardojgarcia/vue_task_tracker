@@ -1,6 +1,16 @@
 <script setup>
 
 
+useHead({
+  title: 'Lemon Task Tracker',
+  meta: [
+    {
+      name: 'Lemon Task Tracker',
+      content: 'A tangy task tracker for your browsing needs'
+    }
+  ]
+})
+
 import AppHeader from '../components/AppHeader.vue'
 import AppTasks from '../components/AppTasks.vue'
 import AppAddTask from '../components/AppAddTask.vue'
